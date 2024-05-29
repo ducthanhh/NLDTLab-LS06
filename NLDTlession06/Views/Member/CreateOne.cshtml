@@ -1,0 +1,70 @@
+﻿@model NLDTlession06.Models.NLDTmember
+
+@{
+    ViewBag.Title = "CreateOne";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h2>them thanh vien </h2>
+        <hr />
+       </div>
+        <div class="form-group">
+            @Html.Label("ma thanh vien", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.id, new { Required = "Required", type = "number" })
+        </div>
+            </div>
+        <div class="form-group">
+            @Html.Label("ten dang nhap", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.username, new { Required = "Required" })
+                
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("ho va ten ", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.fullname, new { Required = "Required" })
+               
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("mat khau", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.password, new { Required = "Required" })
+
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("tuoi", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.age, new { Required = "Required",type = "number",min="18",max="60" })
+               
+        </div>
+
+            <div class="form-group">
+                @Html.Label("email", new { @class = "control-label col-md-2" })
+                <div class=" col-md-10">
+                    @Html.TextBoxFor(model => model.age, new { Required = "Required", type = "email" })
+                    <input type="submit" value="Create" class="btn btn-default" />
+                </div>
+            </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

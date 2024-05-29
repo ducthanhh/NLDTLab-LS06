@@ -1,0 +1,65 @@
+﻿@model NLDTlession06.Models.NLDTmember
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>chi tiet thanh vien </h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            ma so
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+
+        <dt>
+            ten dang nhap
+        </dt>
+
+        <dd>
+            @Html.DisplayNameFor(model => model.username)
+        </dd>
+
+        <dt>
+            ho va ten
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fullname)
+        </dd>
+
+        <dt>
+            mat khau
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            tuoi
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.age)
+        </dd>
+        <dt>
+            email
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("quay lai", "CreateOne") |
+    
+</p>

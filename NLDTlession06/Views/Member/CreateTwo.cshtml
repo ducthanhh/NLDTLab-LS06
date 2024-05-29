@@ -1,0 +1,72 @@
+﻿@model NLDTlession06.Models.NLDTmember
+
+@{
+    ViewBag.Title = "CreateTwo";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>kiem tra du lieu theo cacsh 2</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+
+    <hr />
+    </div>
+    
+    <div class="form-group">
+        @Html.Label("ma thanh vien", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(Model => Model.id)
+        </div>
+    </div>
+    <div class="form-group">
+        @Html.Label("ten dang nhap", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(Model => Model.username)
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("ho va ten ", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(Model => Model.fullname)
+        </div>
+       </div>
+    <div class="form-group">
+        @Html.Label("mat khau", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(Model => Model.password)
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.Label("tuoi", new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(Model => Model.age)
+
+        </div>
+
+        <div class="form-group">
+            @Html.Label("email", new { @class = "control-label col-md-2" })
+            <div class=" col-md-10">
+                @Html.EditorFor(Model => Model.email)
+                
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
